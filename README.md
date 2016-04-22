@@ -1,4 +1,4 @@
-# Redux for ClojureScript based on core.async and transducers.
+# Redux for ClojureScript based on core.async and transducers. [![Clojars Project](https://img.shields.io/clojars/v/thdr.redux-cljs.svg)](https://clojars.org/thdr.redux-cljs)
 
 `[thdr.redux-cljs "0.1.0-SNAPSHOT"]`
 
