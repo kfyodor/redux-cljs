@@ -1,5 +1,5 @@
 # Redux for ClojureScript based on core.async and transducers. 
-[![Clojars Project](https://img.shields.io/clojars/v/thdr.redux-cljs.svg)](https://clojars.org/thdr.redux-cljs)
+[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs)
 
 Functional state management for reactive apps.
 
