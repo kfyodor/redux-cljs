@@ -169,3 +169,8 @@ In order to use redux-cljs with Reagent you should tell `create-store` to use `r
 + Maybe add middlewares/enhances.
 
 
+## License
+
+Copyright © 2016 Theodore Konukhov <me@thdr.io>
+
+Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.

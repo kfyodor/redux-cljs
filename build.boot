@@ -12,6 +12,16 @@
          '[adzerk.bootlaces :refer :all])
 
 (def +version+ "0.1.0-SNAPSHOT")
+(bootlaces! +version+ :dont-modify-paths? true)
+
+(task-options!
+ pom {:project     'thdr.redux-cljs
+      :version     +version+
+      :description "Redux implementation in ClojureScript."
+      :url         "https://github.com/konukhov/redux-cljs"
+      :scm         {:url "https://github.com/konukhov/redux-cljs"}
+      :license     {"Eclipse Public License"
+                    "http://www.eclipse.org/legal/epl-v10.html"}})
 
 (deftask with-test-paths []
   (merge-env! :source-paths #{"test/cljs"})
