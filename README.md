@@ -24,9 +24,9 @@ Reducer must be a pure function of `action` which returns a function (also pure)
   (fn [action]
     (fn [state]
       (case (:type action)
-	    :inc-counter   (update-in state [:counter] inc)
-	    :dec-counter   (update-in state [:counter] dec)
-		:reset-counter (assoc state [:counter] (:counter action))
+        :inc-counter   (update-in state [:counter] inc)
+        :dec-counter   (update-in state [:counter] dec)
+        :reset-counter (assoc state [:counter] (:counter action))
         state))))
 ```
 
@@ -84,9 +84,9 @@ Action should be a map with `:type` key or a function of `state` (see [redux-thu
 ```clojure
 (require [thdr.redux-cljs :refer [create-store
                                   subscribe
-				  unsubscribe
-				  dispatch
-				  get-state]])
+                                  unsubscribe
+                                  dispatch
+                                  get-state]])
 
 (def initial-state
   {:counter 0})
