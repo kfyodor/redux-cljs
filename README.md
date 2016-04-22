@@ -1,5 +1,5 @@
 # Redux for ClojureScript based on core.async and transducers. 
-[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs)
+[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs) [![Circle CI](https://circleci.com/gh/konukhov/redux-cljs/tree/master.svg?style=shield)](https://circleci.com/gh/konukhov/redux-cljs/tree/master)
 
 Functional state management for reactive apps.
 
@@ -18,6 +18,8 @@ Add this dependency to your project.clj or build.boot:
 ```clojure
 [io.thdr/redux-cljs "0.1.0-SNAPSHOT"]
 ```
+
+Version 0.1.0 will be available as soon as I write some docs and add more examples.
 
 ### Reducers
 
