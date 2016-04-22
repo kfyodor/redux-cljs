@@ -19,6 +19,8 @@ Add this dependency to your project.clj or build.boot:
 [io.thdr/redux-cljs "0.1.0-SNAPSHOT"]
 ```
 
+Version 0.1.0 will be available as soon as I write some docs and add more examples.
+
 ### Reducers
 
 #### Creating reducers
