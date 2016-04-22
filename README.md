@@ -1,15 +1,14 @@
-# Redux for ClojureScript based on core.async and transducers.
-
-`[thdr.redux-cljs "0.1.0-SNAPSHOT"]`
+# Redux for ClojureScript based on core.async and transducers. 
+[![Clojars Project](https://img.shields.io/clojars/v/thdr.redux-cljs.svg)](https://clojars.org/thdr.redux-cljs)
 
 Functional state management for reactive apps.
 
-It's highly recommended to read (https://github.com/reactjs/redux)[Redux overview] first.
+It's highly recommended to read [Redux overview](https://github.com/reactjs/redux) first.
 
 ## Differences from pure Redux
 
-+ [Redux-thunk](https://github.com/gaearon/redux-thunk) is already a part of redux-cljs.
-+ Slightly different reducers' type signature.
++ [Redux-thunk](https://github.com/gaearon/redux-thunk) is already part of redux-cljs.
++ Slightly different reducer's type signature.
 + No middlewares and enhancers yet. I'm thinking of adding extensibility in next releases.
 
 ## Usage
@@ -25,9 +24,9 @@ Reducer must be a pure function of `action` which returns a function (also pure)
   (fn [action]
     (fn [state]
       (case (:type action)
-	    :inc-counter   (update-in state [:counter] inc)
-	    :dec-counter   (update-in state [:counter] dec)
-		:reset-counter (assoc state [:counter] (:counter action))
+        :inc-counter   (update-in state [:counter] inc)
+        :dec-counter   (update-in state [:counter] dec)
+        :reset-counter (assoc state [:counter] (:counter action))
         state))))
 ```
 
@@ -57,8 +56,6 @@ There is a macro which makes adding reducers easier:
 
 (def reducer ;; which can be passed to `create-store`
   (combine-reducers first-reducer second-reducer))
-
-
 ```
 
 ### Actions
@@ -87,15 +84,15 @@ Action should be a map with `:type` key or a function of `state` (see [redux-thu
 ```clojure
 (require [thdr.redux-cljs :refer [create-store
                                   subscribe
-								  unsubscribe
-								  dispatch
-								  get-state]])
+                                  unsubscribe
+                                  dispatch
+                                  get-state]])
 
 (def initial-state
   {:counter 0})
 
 ;; After store is created it must subscribe to actions stream.
-;; It is also possible to create a store without initial state:
+;; It is also possible to create a store with empty initial state:
 ;;    (create-store reducer)
 (def store
   (-> (create-store initial-state reducer)
@@ -150,7 +147,7 @@ There's currently an adapter for Rum only but it should be trivial to use cljs-r
 
 ### Reagent (not tested yet)
 
-In order to use redux-cljs with Reagent you should tell `create-store` to use `ratom` instead of plain Clojure `atom`:
+To use redux-cljs with Reagent you should tell `create-store` to use `ratom` instead of plain Clojure `atom`:
 
 ```clojure
 (require [reagent.core :as r])
