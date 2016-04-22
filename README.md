@@ -8,8 +8,8 @@ It's highly recommended to read (https://github.com/reactjs/redux)[Redux overvie
 
 ## Differences from pure Redux
 
-+ [Redux-thunk](https://github.com/gaearon/redux-thunk) is already a part of redux-cljs.
-+ Slightly different reducers' type signature.
++ [Redux-thunk](https://github.com/gaearon/redux-thunk) is already part of redux-cljs.
++ Slightly different reducer's type signature.
 + No middlewares and enhancers yet. I'm thinking of adding extensibility in next releases.
 
 ## Usage
@@ -57,8 +57,6 @@ There is a macro which makes adding reducers easier:
 
 (def reducer ;; which can be passed to `create-store`
   (combine-reducers first-reducer second-reducer))
-
-
 ```
 
 ### Actions
@@ -87,15 +85,15 @@ Action should be a map with `:type` key or a function of `state` (see [redux-thu
 ```clojure
 (require [thdr.redux-cljs :refer [create-store
                                   subscribe
-								  unsubscribe
-								  dispatch
-								  get-state]])
+				  unsubscribe
+				  dispatch
+				  get-state]])
 
 (def initial-state
   {:counter 0})
 
 ;; After store is created it must subscribe to actions stream.
-;; It is also possible to create a store without initial state:
+;; It is also possible to create a store with empty initial state:
 ;;    (create-store reducer)
 (def store
   (-> (create-store initial-state reducer)
@@ -150,7 +148,7 @@ There's currently an adapter for Rum only but it should be trivial to use cljs-r
 
 ### Reagent (not tested yet)
 
-In order to use redux-cljs with Reagent you should tell `create-store` to use `ratom` instead of plain Clojure `atom`:
+To use redux-cljs with Reagent you should tell `create-store` to use `ratom` instead of plain Clojure `atom`:
 
 ```clojure
 (require [reagent.core :as r])
