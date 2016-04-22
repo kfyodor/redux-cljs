@@ -4,7 +4,7 @@
 
 Functional state management for reactive apps.
 
-It's highly recommended to read (https://github.com/reactjs/redux)[Redux overview] first.
+It's highly recommended to read [Redux overview](https://github.com/reactjs/redux) first.
 
 ## Differences from pure Redux
 
