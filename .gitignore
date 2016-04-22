@@ -1,0 +1,6 @@
+target
+.nrepl-*
+.lein-*
+.projectile
+.#*
+.m2
