@@ -15,7 +15,7 @@
 (bootlaces! +version+ :dont-modify-paths? true)
 
 (task-options!
- pom {:project     'thdr/redux-cljs
+ pom {:project     'io.thdr/redux-cljs
       :version     +version+
       :description "Redux implementation in ClojureScript."
       :url         "https://github.com/konukhov/redux-cljs"
