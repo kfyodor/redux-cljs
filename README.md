@@ -1,5 +1,5 @@
 # Redux for ClojureScript based on core.async and transducers. 
-[![Clojars Project](https://img.shields.io/clojars/v/thdr.redux-cljs.svg)](https://clojars.org/thdr.redux-cljs)
+[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs)
 
 Functional state management for reactive apps.
 
@@ -12,6 +12,12 @@ It's highly recommended to read [Redux overview](https://github.com/reactjs/redu
 + No middlewares and enhancers yet. I'm thinking of adding extensibility in next releases.
 
 ## Usage
+
+Add this dependency to your project.clj or build.boot:
+
+```clojure
+[io.thdr/redux-cljs "0.1.0-SNAPSHOT"]
+```
 
 ### Reducers
 
