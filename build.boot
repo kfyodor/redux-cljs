@@ -1,4 +1,4 @@
-(set-env! :source-paths #{"src/clj" "src/cljs"}
+(set-env! :resource-paths #{"src/clj" "src/cljs"}
           :dependencies '[[org.clojure/clojurescript "1.8.40" :scope "provided"]
                           [org.clojure/core.async "0.2.374"   :scope "provided"]
                           [adzerk/bootlaces "0.1.13"          :scope "test"]
