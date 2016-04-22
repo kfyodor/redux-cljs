@@ -6,7 +6,7 @@
                           [reagent "0.6.0-alpha"              :scope "test"]
 
                           [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT"
-                                                       :scope "test"]])
+                                                              :scope "test"]])
 
 (require '[crisptrutski.boot-cljs-test :refer [test-cljs]]
          '[adzerk.bootlaces :refer :all])

@@ -52,11 +52,21 @@
   (fn [action]
     (apply comp (map #(% action) reducers))))
 
+(defn- atom? [obj]
+  (satisfies? IAtom obj))
+
+(defn- make-state-atom [initial-state atom-fn]
+  (if (atom? initial-state)
+    initial-state
+    (let [state (atom-fn initial-state)]
+      (if (atom? state)
+        state
+        (throw (js/Error. (str "You are trying to pass as :atom-fn "
+                               "something that doesn't make an atom.")))))))
+
 (defn create-store
   ([reducer] (create-store {} reducer))
-  ([initial-state reducer & {:keys [atom-fn] :as opts
-                             :or {atom-fn #'atom}}]
-   {:pre [#(associative? initial-state)]}
-   (let [state  (atom-fn initial-state)
+  ([initial-state reducer & {:keys [atom-fn] :or {atom-fn #'atom}}]
+   (let [state  (make-state-atom initial-state atom-fn)
          bus    (make-event-bus reducer)]
      (map->Store {:state state :bus bus}))))

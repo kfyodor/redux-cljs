@@ -4,6 +4,7 @@
                    [cljs.core.async.macros :refer [go]])
   (:require [cljs.test]
             [cljs.core.async :refer [<! >! chan close!]]
+            [reagent.core :as r]
             [thdr.redux-cljs.store :as s]))
 
 ;;;;;;;;;; testing data ;;;;;;;;;;
@@ -55,6 +56,29 @@
 
     (testing "get state"
       (is (= initial-state @(s/get-state store))))))
+
+(deftest initial-state-is-an-atom
+  (testing "clojure atom"
+    (let [state (atom {})
+          store (s/create-store state test-reducer)]
+      (is (= state (s/get-state store)))))
+
+  (testing "reagent atom"
+    (let [state (r/atom {})
+          store (s/create-store state test-reducer)]
+      (is (= state (s/get-state store)))))
+
+  (testing ":atom-fn atom"
+    (let [store (s/create-store initial-state test-reducer :atom-fn atom)
+          state (s/get-state store)]
+      (is (instance? Atom state))
+      (is (= initial-state @state))))
+
+  (testing ":atom-fn ratom"
+    (let [store (s/create-store initial-state test-reducer :atom-fn r/atom)
+          state (s/get-state store)]
+      (is (instance? reagent.ratom.RAtom state))
+      (is (= initial-state @state)))))
 
 (deftest dispatch-test
   (let [store (s/subscribe (s/create-store initial-state test-reducer))
