@@ -1,5 +1,5 @@
 (ns thdr.redux-cljs.rum
-  (:require [thdr.redux-cljs.store:refer [create-store
+  (:require [thdr.redux-cljs.store :refer [create-store
                                            subscribe
                                            unsubscribe] :as store]))
 
