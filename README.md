@@ -1,5 +1,5 @@
 # Redux for ClojureScript based on core.async and transducers. 
-[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs) [![Circle CI](https://circleci.com/gh/konukhov/redux-cljs/tree/master.svg?style=svg)](https://circleci.com/gh/konukhov/redux-cljs/tree/master)
+[![Clojars Project](https://img.shields.io/clojars/v/io.thdr/redux-cljs.svg)](https://clojars.org/io.thdr/redux-cljs) [![Circle CI](https://circleci.com/gh/konukhov/redux-cljs/tree/master.svg?style=shield)](https://circleci.com/gh/konukhov/redux-cljs/tree/master)
 
 Functional state management for reactive apps.
 
