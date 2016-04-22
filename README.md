@@ -13,6 +13,12 @@ It's highly recommended to read [Redux overview](https://github.com/reactjs/redu
 
 ## Usage
 
+Add this dependency to your project.clj or build.boot:
+
+```clojure
+[io.thdr/redux-cljs "0.1.0-SNAPSHOT"]
+```
+
 ### Reducers
 
 #### Creating reducers
