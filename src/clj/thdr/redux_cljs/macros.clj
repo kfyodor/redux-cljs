@@ -14,6 +14,21 @@
                ~@matches
                ~state)))))))
 
+(defmacro defaction
+  ([name action-data] (defaction name nil action-data))
+  ([name bindings action-data]
+   {:pre [(associative? action-data)]}
+   `(let [body# (merge ~action-data
+                       {:type ~(keyword name)})]
+      (def ~name
+        (if (nil? ~bindings)
+          body#
+          (fn ~bindings
+            body#))))))
+
+(defmacro defactionfn [& args]
+  `(defn ~@args))
+
 (comment
   (defreducer inc-reducer [state data]
     :inc   (update-in state [:counter] inc)
